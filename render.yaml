@@ -1,17 +1,12 @@
+
 services:
   - type: web
     name: sitepulse-ai
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATA_DIR
-        value: /var/data
-    disk:
-      name: sitepulse-data
-      mountPath: /var/data
-      sizeGB: 1
